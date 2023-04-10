@@ -1,0 +1,19 @@
+{
+  "name": "dancave-portfolio",
+  "version": "1.0.0",
+  "description": "Daniel Wilton's portfolio and workbench website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-wilton/dancave-portfolio.git"
+  },
+  "author": "Daniel Wilton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-wilton/dancave-portfolio/issues"
+  },
+  "homepage": "https://github.com/daniel-wilton/dancave-portfolio#readme"
+}
