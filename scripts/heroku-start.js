@@ -1,12 +1,7 @@
-import sslRedirect from "heroku-ssl-redirect"
-import express from "express"
-import path from "path"
-
+const express = require("express")
+const path = require("path")
 const app = express()
 const port = process.env.PORT || 3000
-
-// enable ssl redirect
-app.use(sslRedirect.sslRedirect())
 
 app.use(express.json())
 
@@ -25,3 +20,13 @@ app.get("*", function (req, res) {
 app.listen(port, () => {
   console.log("Server is running on port: ", port)
 })
+
+if (process.env.NODE_ENV === "production") {
+  app.use((req, res, next) => {
+    if (req.header("x-forwarded-proto") !== "https") {
+      res.redirect(`https://${req.header("host")}${req.url}`)
+    } else {
+      next()
+    }
+  })
+}
