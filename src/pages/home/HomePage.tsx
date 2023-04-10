@@ -39,7 +39,6 @@ const Subtitle = styled(Typography)<ExtraTypographyProps>(({ theme }) => ({
 
 export default function HomePage(): JSX.Element {
   const [darkMode, setDarkMode] = useState(false)
-  const [, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const toggleDarkMode = (): void => {
     setDarkMode(!darkMode)
