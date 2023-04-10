@@ -39,7 +39,7 @@ const Subtitle = styled(Typography)<ExtraTypographyProps>(({ theme }) => ({
 
 export default function HomePage(): JSX.Element {
   const [darkMode, setDarkMode] = useState(false)
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const [, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const toggleDarkMode = (): void => {
     setDarkMode(!darkMode)
@@ -60,14 +60,6 @@ export default function HomePage(): JSX.Element {
       },
     },
   })
-
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>): void => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleMenuClose = (): void => {
-    setAnchorEl(null)
-  }
 
   return (
     <ThemeProvider theme={theme}>
