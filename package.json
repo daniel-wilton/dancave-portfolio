@@ -19,7 +19,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "typewriter-effect": "^2.19.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -64,6 +65,5 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
-    "typewriter-effect": "^2.19.0"
   }
 }
