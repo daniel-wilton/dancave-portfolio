@@ -3,16 +3,20 @@ import {
   Container,
   IconButton,
   Typography,
-  Card,
-  CardContent,
+  Grid,
   Stack,
 } from "@mui/material"
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles"
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined"
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined"
-import CircleIcon from "@mui/icons-material/Circle"
 import Typewriter from "typewriter-effect"
 import React, { useState } from "react"
+import ComputerWindow from "../../components/containers/ComputerWindow"
+import Polaroid from "../../components/containers/Polaroid"
+import picture from "../../assets/images/me.jpg"
+import pythonLogo from "../../assets/images/python-logo.png"
+import reactLogo from "../../assets/images/react-logo.png"
+import awsLogo from "../../assets/images/aws-logo.png"
 
 const PageContainer = styled(Container)(({ theme }) => ({
   display: "flex",
@@ -96,38 +100,47 @@ export default function HomePage(): JSX.Element {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          padding: "30px",
         }}
       >
         <PageContainer>
-          <Stack direction="row" margin="30px">
-            <Card sx={{ width: "40vw", minWidth: "300px", textAlign: "left" }}>
-              <CardContent sx={{ padding: "10px" }}>
-                <Stack direction="row" spacing={0.5} marginBottom={1}>
-                  <CircleIcon sx={{ color: "#FF605C", fontSize: "0.8rem" }} />
-                  <CircleIcon sx={{ color: "#FFBD44", fontSize: "0.8rem" }} />
-                  <CircleIcon sx={{ color: "#00CA4E", fontSize: "0.8rem" }} />
+          <Grid container spacing={2} alignItems={"center"}>
+            <Grid item md={3} xs={12} justifyContent={"center"}>
+              <Polaroid image={picture}>
+                <Stack
+                  direction="row"
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  spacing={3}
+                >
+                  <img src={pythonLogo} width={"60px"} />
+                  <img src={reactLogo} width={"60px"} />
+                  <img src={awsLogo} width={"60px"} />
                 </Stack>
-                <Stack sx={{ paddingLeft: "16px", paddingTop: "8px" }}>
-                  <Typography variant="h5" component="div">
-                    Welcome 👋🏻
-                  </Typography>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    ...to the real world 😎
-                  </Typography>
-                  <Typography variant="body2">
-                    {
-                      "I'm Daniel Wilton. A Software Developer from Bristol in the UK. \
-                      I currently work with the newest front-end frameworks like React, \
-                      Angular and Vue as well as backend technologies such as Python, C# \
-                      and various AWS/Azure technologies. What you are seeing now is my \
-                      Digital CV 📝 created with React and TypeScript with MUI components! Any \
-                      feedback is much appreciated 💜"
-                    }
-                  </Typography>
-                </Stack>
-              </CardContent>
-            </Card>
-          </Stack>
+              </Polaroid>
+            </Grid>
+            <Grid item md={2} />
+            <Grid item md={7} xs={12} justifyContent={"center"}>
+              <ComputerWindow>
+                <Typography variant="h5" component="div">
+                  Welcome 👋🏻
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  ...to the real world 😎
+                </Typography>
+                <Typography variant="body2">
+                  {
+                    "I'm Daniel Wilton. A Software Developer from Bristol in the UK. \
+                          I currently work with the newest front-end frameworks like React, \
+                          Angular and Vue as well as backend technologies such as Python, C# \
+                          and various AWS/Azure technologies. What you are seeing now is my \
+                          Digital CV 📝 created with React and TypeScript with MUI components! Any \
+                          feedback is much appreciated 💜"
+                  }
+                </Typography>
+              </ComputerWindow>
+            </Grid>
+          </Grid>
         </PageContainer>
       </Box>
     </ThemeProvider>
