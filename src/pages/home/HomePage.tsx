@@ -72,6 +72,7 @@ export default function HomePage(): JSX.Element {
       secondary: {
         main: darkMode ? "#494949" : "#C5C5C5",
         light: "#F7F7F7",
+        dark: "#2E3B55",
       },
       background: {
         paper: darkMode ? "#303030" : "#F7F7F7",
@@ -176,7 +177,12 @@ export default function HomePage(): JSX.Element {
         }}
       >
         <PageContainer>
-          <Grid spacing={10} alignItems={"center"} container>
+          <Grid
+            spacing={10}
+            alignItems={"center"}
+            justifyContent={"center"}
+            container
+          >
             <Grid item xs={12} textAlign={"center"}>
               <Subtitle component={"span"} color={theme.palette.text.primary}>
                 PROJECTS
@@ -184,21 +190,33 @@ export default function HomePage(): JSX.Element {
             </Grid>
             <Grid item md={4} sm={12}>
               <Polaroid image={transportImage} polaroidWidth={"300px"}>
-                <Subtitle component={"span"} textAlign={"center"}>
+                <Subtitle
+                  component={"span"}
+                  textAlign={"center"}
+                  style={{ color: theme.palette.secondary.dark }}
+                >
                   TRANSPORT
                 </Subtitle>
               </Polaroid>
             </Grid>
             <Grid item md={4} sm={12}>
               <Polaroid image={healthcareImage} polaroidWidth={"300px"}>
-                <Subtitle component={"span"} textAlign={"center"}>
+                <Subtitle
+                  component={"span"}
+                  textAlign={"center"}
+                  style={{ color: theme.palette.secondary.dark }}
+                >
                   HEALTHCARE
                 </Subtitle>
               </Polaroid>
             </Grid>
             <Grid item md={4} sm={12}>
               <Polaroid image={weatherImage} polaroidWidth={"300px"}>
-                <Subtitle component={"span"} textAlign={"center"}>
+                <Subtitle
+                  component={"span"}
+                  textAlign={"center"}
+                  style={{ color: theme.palette.secondary.dark }}
+                >
                   WEATHER
                 </Subtitle>
               </Polaroid>
