@@ -9,16 +9,18 @@ const CardContentNoPadding = styled(CardContent)(`
 
 export default function Polaroid({
   image,
+  polaroidWidth = "275px",
   children,
 }: {
   image: string
+  polaroidWidth?: string
   children: React.ReactNode
 }): JSX.Element {
   return (
     <Card
       sx={{
-        width: "275px",
-        minWidth: "275px",
+        width: polaroidWidth,
+        minWidth: polaroidWidth,
         textAlign: "left",
         margin: "auto",
         borderRadius: "4px",

@@ -17,6 +17,19 @@ import picture from "../../assets/images/me.jpg"
 import pythonLogo from "../../assets/images/python-logo.png"
 import reactLogo from "../../assets/images/react-logo.png"
 import awsLogo from "../../assets/images/aws-logo.png"
+import healthcareImage from "../../assets/images/healthcare.jpeg"
+import transportImage from "../../assets/images/transport.jpeg"
+import weatherImage from "../../assets/images/weather.jpeg"
+import IconBadge from "../../components/containers/IconBadge"
+import { TbBrandCSharp } from "react-icons/tb"
+import {
+  SiJavascript,
+  SiTypescript,
+  SiAmazonaws,
+  SiPython,
+  SiMicrosoftazure,
+  SiCplusplus,
+} from "react-icons/si"
 
 const PageContainer = styled(Container)(({ theme }) => ({
   display: "flex",
@@ -52,7 +65,13 @@ export default function HomePage(): JSX.Element {
     palette: {
       mode: darkMode ? "dark" : "light",
       primary: {
-        main: darkMode ? "#4D5F82" : "#91ACE3",
+        main: darkMode ? "#3E4D6E" : "#91ace3",
+        dark: "#303030",
+        light: "#606060",
+      },
+      secondary: {
+        main: darkMode ? "#494949" : "#C5C5C5",
+        light: "#F7F7F7",
       },
       background: {
         paper: darkMode ? "#303030" : "#F7F7F7",
@@ -105,6 +124,9 @@ export default function HomePage(): JSX.Element {
       >
         <PageContainer>
           <Grid container spacing={2} alignItems={"center"}>
+            <Grid item xs={12} textAlign={"center"}>
+              <Subtitle component={"span"}>ABOUT ME</Subtitle>
+            </Grid>
             <Grid item md={3} xs={12} justifyContent={"center"}>
               <Polaroid image={picture}>
                 <Stack
@@ -139,6 +161,166 @@ export default function HomePage(): JSX.Element {
                   }
                 </Typography>
               </ComputerWindow>
+            </Grid>
+          </Grid>
+        </PageContainer>
+      </Box>
+      <Box
+        sx={{
+          minHeight: "50vh",
+          backgroundColor: theme.palette.background.paper,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "30px",
+        }}
+      >
+        <PageContainer>
+          <Grid spacing={10} alignItems={"center"} container>
+            <Grid item xs={12} textAlign={"center"}>
+              <Subtitle component={"span"} color={theme.palette.text.primary}>
+                PROJECTS
+              </Subtitle>
+            </Grid>
+            <Grid item md={4} sm={12}>
+              <Polaroid image={transportImage} polaroidWidth={"300px"}>
+                <Subtitle component={"span"} textAlign={"center"}>
+                  TRANSPORT
+                </Subtitle>
+              </Polaroid>
+            </Grid>
+            <Grid item md={4} sm={12}>
+              <Polaroid image={healthcareImage} polaroidWidth={"300px"}>
+                <Subtitle component={"span"} textAlign={"center"}>
+                  HEALTHCARE
+                </Subtitle>
+              </Polaroid>
+            </Grid>
+            <Grid item md={4} sm={12}>
+              <Polaroid image={weatherImage} polaroidWidth={"300px"}>
+                <Subtitle component={"span"} textAlign={"center"}>
+                  WEATHER
+                </Subtitle>
+              </Polaroid>
+            </Grid>
+          </Grid>
+        </PageContainer>
+      </Box>
+      <Box
+        sx={{
+          minHeight: "40vh",
+          backgroundColor: theme.palette.primary.dark,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "30px",
+        }}
+      >
+        <PageContainer>
+          <Grid
+            spacing={10}
+            alignItems={"center"}
+            container
+            justifyContent={"center"}
+          >
+            <Grid item xs={12} textAlign={"center"}>
+              <Subtitle
+                component={"span"}
+                style={{ color: theme.palette.secondary.light }}
+              >
+                SKILLS
+              </Subtitle>
+            </Grid>
+            <Grid item md={1.5} textAlign={"center"}>
+              <IconBadge
+                backgroundColor={theme.palette.primary.light}
+                iconColor="white"
+                text="C#"
+                icon={
+                  <TbBrandCSharp
+                    size={"3.5rem"}
+                    color={theme.palette.secondary.light}
+                  />
+                }
+              />
+            </Grid>
+            <Grid item md={1.5} textAlign={"center"}>
+              <IconBadge
+                backgroundColor={theme.palette.primary.light}
+                iconColor="white"
+                text="JavaScript"
+                icon={
+                  <SiJavascript
+                    size={"3.5rem"}
+                    color={theme.palette.secondary.light}
+                  />
+                }
+              />
+            </Grid>
+            <Grid item md={1.5} textAlign={"center"}>
+              <IconBadge
+                backgroundColor={theme.palette.primary.light}
+                iconColor="white"
+                text="TypeScript"
+                icon={
+                  <SiTypescript
+                    size={"3.5rem"}
+                    color={theme.palette.secondary.light}
+                  />
+                }
+              />
+            </Grid>
+            <Grid item md={1.5} textAlign={"center"}>
+              <IconBadge
+                backgroundColor={theme.palette.primary.light}
+                iconColor="white"
+                text="AWS"
+                icon={
+                  <SiAmazonaws
+                    size={"3.5rem"}
+                    color={theme.palette.secondary.light}
+                  />
+                }
+              />
+            </Grid>
+            <Grid item md={1.5} textAlign={"center"}>
+              <IconBadge
+                backgroundColor={theme.palette.primary.light}
+                iconColor="white"
+                text="Azure"
+                icon={
+                  <SiMicrosoftazure
+                    size={"3.5rem"}
+                    color={theme.palette.secondary.light}
+                  />
+                }
+              />
+            </Grid>
+            <Grid item md={1.5} textAlign={"center"}>
+              <IconBadge
+                backgroundColor={theme.palette.primary.light}
+                iconColor="white"
+                text="Python"
+                icon={
+                  <SiPython
+                    size={"3.5rem"}
+                    color={theme.palette.secondary.light}
+                  />
+                }
+              />
+            </Grid>
+            <Grid item md={1.5} textAlign={"center"}>
+              <IconBadge
+                backgroundColor={theme.palette.primary.light}
+                iconColor="white"
+                text="C++"
+                icon={
+                  <SiCplusplus
+                    size={"3.5rem"}
+                    color={theme.palette.secondary.light}
+                  />
+                }
+              />
             </Grid>
           </Grid>
         </PageContainer>
